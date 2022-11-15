@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url("https://c0.wallpaperflare.com/path/519/791/635/concept-development-device-flat-b06b658c0044016439463029d9a4cd3a.jpg");
+  background-repeat: no-repeat;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+.form-container {
+  max-width: 30%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  align-self: center;
+  margin: 2em;
+}
+.email-password {
+  text-align: center;
+}
+.email-password input {
+  margin: 0.5em auto;
+  max-width: 20em;
+}
+#text {
+  text-align: center;
+  margin: 1em;
+  font-weight: 500;
+}
+#datos {
+  text-align: center;
+  color: brown;
+}
+.error {
+  border-color: red;
+}
+
+/* .email-password {
+  margin: 50px;
+  margin-right: 150px;
+} */
+.log {
+  background-color: black;
+}
+.login-card-container {
+  background-color: #f8f9fa;
+  max-width: 80%;
+}
+.form-control {
+  font-weight: 200;
+}
+.pt-2 {
+  font-weight: 100;
+}
+
+.all {
+  margin: 6rem auto;
+}

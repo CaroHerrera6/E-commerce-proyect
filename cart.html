@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+  <!--Nav Bar-->
+    <nav class=" cart-nav navbar navbar-expand-lg navbar-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button
+                  class="btn user-btn dropdown-toggle"
+                  type="button"
+                  href="#"
+                  id="persona"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li>
+                    <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="my-profile.html"
+                      >Mi perfil</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="login.html" id="finish"
+                      >Cerrar Sesión</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of the nav bar-->
+    
+    <main class="container">
+      <!-- This is the cart container -->
+      <div class="container cart-container card-body">
+        <h3 class="col-10 my-5 text-secondary align-self-center">Tus productos</h3>
+       
+    
+        <!--EN ESTE DIV VAN LOS PRODUCTOS DEL CARRITO-->
+        <div id="buy"></div>
+        <!--Acá van los precios finales-->
+        <div class="container">
+        <div class="row-lg col-md ">
+        <div class="col ">
+          <div class="right_side p-5 shadow bg-white">
+            <h2 class="product_name mb-5">El total de tu compra <br>(en USD)</h2>
+            <div class="price_indiv d-flex justify-content-between">
+              <p>Productos</p>
+              <p id="prodAmount"> </p>
+            </div>
+            <div class="price_indiv d-flex justify-content-between">
+              <p>Costo de envío</p>
+              <p id="shipping_charge"> </p>
+            </div>
+            <hr />
+            <div class="total-amt d-flex justify-content-between font-weight-bold">
+              <p>Precio Final</p>
+              <p> <span id="total_cart_amt"></span></p>
+            </div>
+          </div>
+          <!-- discount code part -->
+          <div class="discount_code mt-3 shadow">
+            <div class="card">
+              <div class="card-body">
+                <a class="d-flex justify-content-between" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Tengo un código!
+                  <span><i class="fas fa-chevron-down pt-1"></i></span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                  <div class="mt-3">
+                    <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code"/>
+                    <small id="error_trw" class="text-dark mt-3">code is thapa</small>
+                  </div>
+                  <button class="btn btn-dark btn-sm mt-3" onclick="discount_code()">
+                    Apply
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- discount code ends -->
+          
+        </div>
+      
+        <!-- TODO LO RELACIONADO AL ENVIO Y LA FORMA DE PAGO -->
+        <div class="col">
+            <div class="col card card-custom pb-4">
+              <div class="card-body mt-0 mx-3">
+                <div class=" mb-3 pb-2 mt-3">
+                  <h4 style="color: #495057 ;">Dirección del envío</h4>
+                </div>
+                <!-- Aca empieza el form completo -->  
+                <form class="mb-0 needs-validation" id="form" novalidate>
+                  <!--Este el secto de los campos de identificacioin-->
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form9Example1">Nombre</label>
+                        <input type="text" id="form9Example1" class="form-control input-custom" required/>
+                        <div class="invalid-feedback">Campo obligatorio</div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form9Example2">Apellido</label>
+                        <input type="text" id="form9Example2" class="form-control input-custom"required />
+                        <div class="invalid-feedback">Campo obligatorio</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form9Example3">Calle</label>
+                        <input type="text" id="form9Example3" class="form-control input-custom"required />
+                        <div class="invalid-feedback">Campo obligatorio</div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-outline">
+                        <label class="form-label" for="form9Example4">Esquina</label>
+                        <input type="text" id="form9Example4" class="form-control input-custom"required />
+                        <div class="invalid-feedback">Campo obligatorio</div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Acá terminan los campos de identificación-->
+      
+                  <!--Método de envío-->
+                  <div class="row justify-content-center">
+                    <div class="col justify-content-center" >
+                      <div class=" mb-1 pb-1 mt-3">
+                        <h4 style="color: #495057 ;"> Tipo de envío</h4>
+                      </div>
+                      <br>
+                      <div class="form-horizontal" id="enviar" required>
+                        <input class="mb-4 mr-2 ship" type="radio" name="option" value="0.05" id="standard" checked>
+                        <label for="standard">Envío Standard (10-15 días hábiles)</label><br>
+                        <input class="mb-4 mr-2 ship" type="radio" name="option" value="0.07" id="fast">
+                        <label for="fast">Envío Rápido (5-10 días hábiles)</label><br>
+                        <input class="mb-4 mr-2 ship" type="radio" name="option" value="0.15" id="urgent">
+                        <label for="urgent">Envío Urgente (Máximo 3 días hábiles)</label>
+                        <div class="invalid-feedback" id="selectEnvio">Por favor elija un método de envío</div>
+                        <!-- <div class="valid-feedback" >Has elegido pagar con </div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <!-- Acá se dispara la modal -->
+                  <div class="col-6">
+                    <div id="botones">
+                      <div class="row">  
+                        <!-- <span class="feedback" id="gottaPay">Ingrese una forma de pago</span> -->
+
+                        <button type="button" class="btn btn-link mb-2" id="pay" data-bs-toggle="modal" data-bs-target="#exampleModal">Forma de pago</button>
+
+                        <button type="submit" class="btn btn-dark text-uppercase" id="purchase">Comprar</button>
+
+                      </div>
+                    </div>
+                    
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Completa tu compra!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="main-modal">
+                              <section id="head">
+                                <div id="head">
+                                  <h4>Ingresa un método de pago</h4>
+                                </div>
+                              </section>
+                              <section id="tarjeta">
+                                <div id="pago">
+                                  <div id="form-card" class="form-field">
+                                    <input type="radio" class="form-check-input" id="inputTarje" name="pago" required>
+                                    <label for="inputTarje" class="mb-4">Pagar con tarjeta de crédito</label>
+                                    <br>
+                                    <label for="cc-number">Card number:</label>
+                                    <input id="cc-number" maxlength="19" class="form-control" placeholder="1111 2222 3333 4444" name="number" required>
+                                  </div>
+                                  <div id="form-date" class="form-field">
+                                    <label for="expiry-month">Expiry date:</label>
+                                    <select id="expiry-month"  class="form-select" name="month" required>
+                                      <option id="trans-label_month" value="" default="default" selected="selected">Month</option>
+                                      <option value="1" name="meses">Ene</option>
+                                      <option value="2" name="meses">Feb</option>
+                                      <option value="3" name="meses">Mar</option>
+                                      <option value="4" name="meses">Abr</option>
+                                      <option value="5" name="meses">May</option>
+                                      <option value="6" name="meses">Jun</option>
+                                      <option value="7" name="meses">Jul</option>
+                                      <option value="8" name="meses">Ago</option>
+                                      <option value="9" name="meses">Sep</option>
+                                      <option value="10" name="meses">Oct</option>
+                                      <option value="11" name="meses">Nov</option>
+                                      <option value="12" name="meses">Dic</option>
+                                    </select>
+                                    <select id="expiry-year" class="form-select" name="anio" required>
+                                      <option id="trans-label_year" value="" default="" selected="selected">Year</option>
+                                      <option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</select>
+                                  </div>
+                                </div>
+                                <div id="form-sec-code">
+                                  <label for="sec-code">Security code:</label>
+                                  <input id = "security"type="password" maxlength="3" class="form-control" placeholder="123"  name="seguro" required>
+                                  <div id="carta" class="invalid-feedback">Los campos no pueden estar vacíos</div>
+                                </div>
+                              </section>
+                              <hr>
+                              <section id="transferencia" >
+                                <input type="radio" id="inputTransfe" name="pago" class="form-check-input" required>
+                                <label for="inputTransfe" class="mb-4">Pagar con transferencia bancaria</label>
+                                <br>
+                                <input type="text" id="pagoTransfe" class="form-control" placeholder="tu numero de cuenta"required>
+                                <label for="pagoTransfe">Número de cuenta</label>
+                                <div id="tarta" class="invalid-feedback">
+                                  Los campos no pueden estar vacíos
+                                </div>
+                              </section>
+                            </div>
+                          </div>
+                        </div>
+            
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guardar">Comprar</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Acá se cierra toda la modal -->
+                  </div>
+                </form>
+              </div>
+            </div>
+          
+        </div>
+        </div></div>
+        <br>  
+        <!-- right side div -->
+      </div>
+      <div class="container" id="container"></div>
+      <!-- </div> -->
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end"><a href="#">Volver arriba</a></p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> - 2022</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+    </script>
+  </body>
+</html>

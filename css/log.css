@@ -1,0 +1,22 @@
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #3c4048;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, #00abb3, #3c4048, #00abb3);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #3c4048, #00abb3, #3c4048);
+}
+.mainDiv {
+  background-color: #f8f9fa;
+  border: none;
+}
+body {
+  box-sizing: border-box;
+  margin: auto auto;
+  padding: 0;
+}
+form {
+  margin: 0 auto;
+}
