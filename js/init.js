@@ -63,7 +63,7 @@ function calcAmount() {
     parseFloat(subtotal.toFixed(2)) + parseFloat(shipping.toFixed(2));
 }
 
-if (usuario == null) {
+if (usuario === null) {
   document.getElementById("persona").innerHTML = `Ingresar`;
   document.getElementById("persona").addEventListener("click", () => {
     window.location = "login.html";

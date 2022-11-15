@@ -151,7 +151,7 @@ function commentContainer() {
         <option value=4>4</option>
         <option value=5>5</option>
         </select></div>
-        <button type="submit" class="btn btn-dark my-3" style="width:100px; float:right" id="enviar">Enviar</button></div>
+        <button type="button" class="btn btn-dark my-3" style="width:100px; float:right" id="enviar">Enviar</button></div>
          
   `;
 
